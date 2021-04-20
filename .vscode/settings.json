@@ -61,6 +61,8 @@
         "unordered_map": "cpp",
         "xhash": "cpp",
         "array": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "bitset": "cpp",
+        "cassert": "cpp"
     }
 }
