@@ -63,6 +63,7 @@
         "array": "cpp",
         "future": "cpp",
         "bitset": "cpp",
-        "cassert": "cpp"
+        "cassert": "cpp",
+        "stack": "cpp"
     }
 }

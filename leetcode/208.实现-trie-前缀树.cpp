@@ -58,8 +58,8 @@ public:
         for (auto &ch : word)
         {
             p = p->next_[ch - 'a'];
+            if (!p) return false;
         }
-
         return p->is_word_;
     }
 
@@ -71,6 +71,7 @@ public:
         for (auto &ch : prefix)
         {
             p = p->next_[ch - 'a'];
+            if (!p) return false;
         }
         return p;
     }
