@@ -2,11 +2,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
+using namespace std;
 
 class TrieNode
 {
 public:
-    TrieNode() { is_word_ = false; }
+    TrieNode() {
+        next_.resize(26);
+        is_word_ = false; 
+    }
     bool is_word_ = false;
     ~TrieNode()
     {
@@ -36,7 +40,7 @@ public:
     void insert(string word)
     {
         TrieNode *p = root_;
-        for (auto &ch : root_)
+        for (auto &ch : word)
         {
             if (p->next_[ch - 'a'] == nullptr)
                 p->next_[ch - 'a'] = new TrieNode();
@@ -53,8 +57,8 @@ public:
         for (auto &ch : word)
         {
             p = p->next_[ch - 'a'];
+            if (!p) return false;
         }
-
         return p->is_word_;
     }
 
@@ -66,6 +70,7 @@ public:
         for (auto &ch : prefix)
         {
             p = p->next_[ch - 'a'];
+            if (!p) return false;
         }
         return p;
     }
@@ -73,3 +78,15 @@ public:
 private:
     TrieNode *root_;
 };
+
+int main()
+{   
+    Trie trie;
+    trie.insert("lsp");
+    trie.insert("hg");
+    trie.insert("psg");
+
+    bool s = trie.search("hello");
+     s = trie.search("psg");
+    return 0;
+}

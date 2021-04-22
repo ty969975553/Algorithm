@@ -13,3 +13,5 @@ ADD_EXECUTABLE(josephus_test classic/Josephus.cpp)
 ADD_EXECUTABLE(bitset_test classic/bitset.cpp)
 
 ADD_EXECUTABLE(find_test classic/find_and_replace.cpp)
+
+ADD_EXECUTABLE(leetcode_test leetcode/leetcode.cpp)
